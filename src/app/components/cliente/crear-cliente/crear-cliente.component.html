@@ -1,0 +1,69 @@
+<div id="forms" class="page-layout simple fullwidth" fxLayout="column">    
+    <!-- CONTENT -->
+    <div class="content p-24">
+        <div class="h1">
+                Crear Cliente
+        </div>
+        <div style="padding-top: 10px;">
+        </div>            
+        <!-- CONTENT CARD -->
+        <div class="content-card">
+
+            <!-- CONTENT -->
+            <div class="content">
+
+                <form name="clienteForm" [formGroup]="clienteForm" class="w-100-p" fxLayout="column" fxFlex>
+
+                    <div class="tab-content p-24" fusePerfectScrollbar>
+
+                        <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                            <mat-label>Nombre</mat-label>
+                            <input matInput placeholder="Nombre"
+                                    name="nombre"
+                                    formControlName="nombre"
+                                    required>
+                        </mat-form-field>
+                        
+                        <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                            <mat-label>Apellido</mat-label>
+                            <input matInput placeholder="Apellido"
+                                    name="apellido"
+                                    formControlName="apellido"
+                                    required>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                            <mat-label>Edad</mat-label>
+                            <input matInput placeholder="Edad"
+                                    name="edad"
+                                    formControlName="edad"
+                                    type="number"
+                                    required>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                            <mat-label>Fecha de Nacimiento</mat-label>                            
+                            <input matInput [matDatepicker]="picker" placeholder="Fecha de Nacimiento" formControlName="fechaNacimiento">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field>                        
+
+                        <button mat-raised-button
+                            class="save-product-button"
+                            [disabled]="clienteForm.invalid"
+                            (click)="saveProduct()">
+                        <span>Guardar</span>
+                        </button>                        
+                                                
+                    </div>
+                </form>
+
+            </div>
+            <!-- / CONTENT -->
+
+        </div>
+        <!-- / CONTENT CARD -->            
+    </div>
+</div>
+    
+    
